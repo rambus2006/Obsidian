@@ -27,6 +27,7 @@ When you're ready, delete this note and make the vault your own.
 	- Git
 	- [NetWork](ETC_NetWork)
 		- [WebRTC](ETC_NetWork/WebRTC/001_WebRTC 개념.md)
+	- [Security](PDF.md)
 - ProgramSetting
 	-  [Linux](ProgramSettings/WSL2 설치(Linux).md)
 	-  [node.js](ProgramSettings/nvm(Node.js).md)
@@ -35,5 +36,7 @@ When you're ready, delete this note and make the vault your own.
 - website Checklist
 
 > Algorism
+- Stack
+- Queue
 - DP
 - Hash
