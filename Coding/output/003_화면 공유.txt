@@ -1,0 +1,33 @@
+# 개요
+```javascript
+// The browser will prompt the user for access and offer a choice of screen, window, or tab 
+await room.localParticipant.setScreenShareEnabled(true);
+```
+
+
+# 브라우저 소리 공유 
+ ● `createScreenTracks` 메서드와 오디오 옵션 동의 후 사용할 수 있다.
+ ```javascript
+ const tracks = await localParticipant.createScreenTracks({
+  audio: true,
+});
+
+tracks.forEach((track) => {
+  localParticipant.publishTrack(track);
+});
+ ```
+
+### 오디오 공유 테스트[](https://docs.livekit.io/home/client/tracks/screenshare/#testing-audio-sharing)
+
+#### 발행자[](https://docs.livekit.io/home/client/tracks/screenshare/#publisher)
+
+**오디오를 공유할 때는 브라우저 탭** (창이 아님) 을 선택하고 ☑️ 탭 오디오 공유를 선택하세요 . 그렇지 않으면 호출 시 오디오 트랙이 생성되지 않습니다 `createScreenTracks`.
+
+![전체 화면, 특정 창 또는 Chrome 탭을 공유할지 선택할 수 있는 팝업 창으로, 오디오 및 작업 버튼을 공유할 수 있는 옵션이 제공됩니다.](https://docs.livekit.io/images/client/share-browser-audio-screen.png)
+
+#### 구독자[](https://docs.livekit.io/home/client/tracks/screenshare/#subscriber)
+
+수신 측에서는 다음을 사용할 수 있습니다.[`RoomAudioRenderer`](https://github.com/livekit/components-js/blob/main/packages/react/src/components/RoomAudioRenderer.tsx)방의 모든 오디오 트랙을 자동으로 재생하려면[`AudioTrack`](https://github.com/livekit/components-js/blob/main/packages/react/src/components/participant/AudioTrack.tsx)또는 페이지에 트랙을 추가하려면 사용자 지정 `<audio>`태그를 사용하세요. 소리가 들리지 않으면 서버에서 트랙을 수신하고 있는지 확인하세요.
+```
+room.getParticipantByIdentity('<participant_id>').getTrackPublication('screen_share_audio');
+```

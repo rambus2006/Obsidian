@@ -1,0 +1,73 @@
+● 애플리케이션에서 실시간 미디어 트랙을 재생하고 렌더링 한다.
+
+# 개요
+● 룸에 연결된 동안 참가자는 룸에 게시된 모든 트랙을 수신하고 렌더링할 수 있다.
+● 자동구독활성화가 되면 서버가 참가자에게 자동으로 새 트랙을 전달하여 렌더링할 수 있도록 준비한다.
+
+# 구독 추적 
+● 미디어 트랙을 렌더링 하려면 먼저 서버에서 트랙 데이터를 수신하는 구독이 필요하다.
+● 방, 참가자, 트랙 LiveKit 은 두가지구성요소, 메타 데이터 (서버에서 제공받는) 그리고 트랙(가로 미디어 스트림에서 제공받는)으로 이루어진다.
+● 미디어 트랙을 렌더링하려면 먼저 서버에서 트랙데이터를 수신하는 구독이 필요하다.
+● 구독 콜백
+```javascript
+import { connect, RoomEvent } from 'livekit-client';
+
+room.on(RoomEvent.TrackSubscribed, handleTrackSubscribed);
+
+function handleTrackSubscribed(
+  track: RemoteTrack,
+  publication: RemoteTrackPublication,
+  participant: RemoteParticipant,
+) {
+  /* Do things with track, publication or participant */
+}
+```
+
+```React
+import { useTracks } from '@livekit/components-react';
+
+export const MyPage = () => {
+  return (
+    <LiveKitRoom ...>
+      <MyComponent />
+    </LiveKitRoom>
+  )
+}
+
+export const MyComponent = () => {
+  const cameraTracks = useTracks([Track.Source.Camera], {onlySubscribed: true});
+  return (
+    <>
+      {cameraTracks.map((trackReference) => {
+        return (
+          <VideoTrack {...trackReference} />
+        )
+      })}
+    </>
+  )
+}
+```
+
+# 볼륨 조절 
+● 오디오 트랙은 0~1.0 까지의 볼륨을 지원, 기본값은 1.0 으로 설정된다.(줄이기만 가능 )
+```javascript
+track.setVolume(0.5);
+```
+
+> 활성스피커 식별 
+● LiveKit 은 현재 발언하는 참여자를 자동으로 감지하는 기능이 있고, 발언상태가 변경될 때마다 업데이트 내용을 로컬 및 연결된 참여자 모두에게 전송함.
+● Room과 Participant 객체 모두에게 발생
+---
+● `Participant 객체`
+	￮ 세션(방)에 참여한 한 사람(AI 에이전트도 해당됨.)
+	￮ `identity` : 참가자의 고유ID
+	￮ `name`:  표시 이름
+	￮ `tracks` : 이 참가자가 게시(publish)한 트랙들(오디오/비디오등)
+	￮ `isSpeaking` : 현재 말하고 있는지에 대한 여부
+	￮ `metaData` : 커스텀 데이터(역할)
+	￮ `connectionQuality` : 연결 상태(good/bad등)
+● LiveKit 참가자 종류
+	￮ `LocalParticipant` : 현재 내가 사용중인 클라이언트
+	￮ `RemoteParticipant` : 내가 아닌 모든 참가자
+
+
