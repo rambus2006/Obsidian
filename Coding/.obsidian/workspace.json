@@ -22,6 +22,90 @@
             }
           },
           {
+            "id": "c81895ec452139c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/FE_Vue/무제.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "무제"
+            }
+          },
+          {
+            "id": "4a92dc7bec9ac53a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/ETC_Library/LiveKit/LiveKit docs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LiveKit docs"
+            }
+          },
+          {
+            "id": "0cff37ed18d06de7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/ETC_Library/LiveKit/001_개요.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "001_개요"
+            }
+          },
+          {
+            "id": "0b5f578abfd6c3ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/ETC_Library/LiveKit/002_카메라 및 마이크.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "002_카메라 및 마이크"
+            }
+          },
+          {
+            "id": "4f506ca81d79ef08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/ETC_Library/LiveKit/003_화면 공유.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "003_화면 공유"
+            }
+          },
+          {
+            "id": "bc258f7f6a3a7054",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/ETC_Library/LiveKit/004_ 트랙 구독(데이터 수신 및 렌더링).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "004_ 트랙 구독(데이터 수신 및 렌더링)"
+            }
+          },
+          {
             "id": "555457888ea6f1a1",
             "type": "leaf",
             "state": {
@@ -35,7 +119,8 @@
               "title": "옵시디언 사용에 관한 문서"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -197,11 +282,19 @@
       "workspaces:작업 공간 레이아웃 관리": false
     }
   },
-  "active": "ad977396c3aa6802",
+  "active": "611108ef50a19a15",
   "lastOpenFiles": [
-    "Welcome.md",
-    "옵시디언 사용에 관한 문서.md",
+    "Skills/ETC_Library/LiveKit/003_화면 공유.md",
+    "Skills/ETC_Library/LiveKit/004_ 트랙 구독(데이터 수신 및 렌더링).md",
+    "Skills/ETC_Library/LiveKit/002_카메라 및 마이크.md",
+    "Skills/ETC_Library/LiveKit/LiveKit docs.md",
+    "Skills/ETC_Library/LiveKit/001_개요.md",
+    "Skills/ETC_Library/LiveKit",
     "Skills/FE_Vue/무제.md",
+    "무제.md",
+    "옵시디언 사용에 관한 문서.md",
+    "Skills/ETC_Library",
+    "Welcome.md",
     "무제.canvas",
     "무제.base",
     "Algorism/003_연결리스트(LinkedList)/practice/BOJ 1158) 요세푸스 문제.md",
@@ -227,8 +320,6 @@
     "Skills/ETC_Security/PDF.md",
     "Skills/ETC_NetWork/WebRTC",
     "Skills/FE_Vue",
-    "Skills/FE_React",
-    "Skills/ETC_Security",
     "ProgramSettings/WSL2 설치(Linux).md",
     "ProgramSettings/nvm(Node.js).md",
     "Algorism/002_Queue/002_Queue.md",
