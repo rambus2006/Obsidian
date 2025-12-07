@@ -21,6 +21,7 @@ When you're ready, delete this note and make the vault your own.
 	- Oriacle DB
 	- MySQL 
 - ETC
+	- 사고력
 	- BlockChain
 	- Data & AI
 	- DesignGuide
